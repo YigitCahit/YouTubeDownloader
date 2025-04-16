@@ -40,12 +40,12 @@
             txtUrl.Location = new Point(12, 12);
             txtUrl.Name = "txtUrl";
             txtUrl.PlaceholderText = "Video URL";
-            txtUrl.Size = new Size(100, 23);
+            txtUrl.Size = new Size(181, 23);
             txtUrl.TabIndex = 0;
             // 
             // btnDownload
             // 
-            btnDownload.Location = new Point(118, 12);
+            btnDownload.Location = new Point(199, 12);
             btnDownload.Name = "btnDownload";
             btnDownload.Size = new Size(75, 23);
             btnDownload.TabIndex = 1;
@@ -55,28 +55,32 @@
             // 
             // progressBar1
             // 
-            progressBar1.Location = new Point(12, 41);
+            progressBar1.Location = new Point(12, 63);
             progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(181, 23);
+            progressBar1.Size = new Size(262, 23);
             progressBar1.TabIndex = 2;
             // 
             // lblStatus
             // 
             lblStatus.AutoSize = true;
-            lblStatus.Location = new Point(16, 45);
+            lblStatus.Location = new Point(12, 45);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(38, 15);
+            lblStatus.Size = new Size(47, 15);
             lblStatus.TabIndex = 3;
-            lblStatus.Text = "label1";
+            lblStatus.Text = "Durum:";
             // 
             // Form1
             // 
-            ClientSize = new Size(596, 363);
+            ClientSize = new Size(284, 101);
             Controls.Add(lblStatus);
             Controls.Add(progressBar1);
             Controls.Add(btnDownload);
             Controls.Add(txtUrl);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Form1";
+            ShowIcon = false;
+            Text = "YouTubeDownloader";
             ResumeLayout(false);
             PerformLayout();
         }

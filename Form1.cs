@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 using VideoLibrary;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace YouTubeDownloader
 {
@@ -15,10 +16,11 @@ namespace YouTubeDownloader
         private void btnDownload_Click(object sender, EventArgs e)
         {
             string videoUrl = txtUrl.Text;
+            progressBar1.Value = 0;
 
             if (string.IsNullOrWhiteSpace(videoUrl))
             {
-                MessageBox.Show("Lütfen geçerli bir YouTube linki giriniz.");
+                MessageBox.Show("Lütfen geçerli bir YouTube linki giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -37,6 +39,7 @@ namespace YouTubeDownloader
                     string filePath = Path.Combine(folderPath, video.FullName);
                     File.WriteAllBytes(filePath, video.GetBytes());
 
+                    progressBar1.Value = 100;
                     lblStatus.Text = "Durum: Ýndirme tamamlandý!";
                     MessageBox.Show("Video baþarýyla indirildi.", "Baþarýlý", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
